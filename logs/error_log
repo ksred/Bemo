@@ -1,0 +1,19 @@
+[Fri Jun 08 12:25:24 2012] [notice] Apache/2.2.22 (Ubuntu) PHP/5.3.9-ZS5.6.0 configured -- resuming normal operations
+[Fri Jun 08 12:26:54 2012] [notice] caught SIGTERM, shutting down
+[Fri Jun 08 12:26:57 2012] [crit] [client 127.0.0.1] (13)Permission denied: /var/www/CI/.htaccess pcfg_openfile: unable to check htaccess file, ensure it is readable
+[Mon Jul 23 18:50:08 2012] [error] [client 127.0.0.1] File does not exist: /var/www/bemo/favicon.ico
+[Mon Jul 23 18:57:58 2012] [error] [client 127.0.0.1] File does not exist: /var/www/bemo/assets/ico
+[Mon Jul 23 20:17:15 2012] [error] [client 127.0.0.1] File does not exist: /var/www/bemo/admin, referer: http://bemo.localhost/
+[Mon Jul 23 20:17:42 2012] [error] [client 127.0.0.1] File does not exist: /var/www/bemo/admin, referer: http://bemo.localhost/
+[Mon Jul 23 20:17:54 2012] [error] [client 127.0.0.1] File does not exist: /var/www/bemo/admin
+[Mon Jul 23 20:21:26 2012] [error] [client 127.0.0.1] File does not exist: /var/www/bemo/admin
+[Mon Jul 23 20:21:26 2012] [error] [client 127.0.0.1] File does not exist: /var/www/bemo/admin
+[Mon Jul 23 20:23:09 2012] [error] [client 127.0.0.1] File does not exist: /var/www/bemo/admin
+[Mon Jul 23 20:23:09 2012] [error] [client 127.0.0.1] File does not exist: /var/www/bemo/admin
+[Mon Jul 23 20:23:23 2012] [error] [client 127.0.0.1] File does not exist: /var/www/bemo/admin
+[Mon Jul 23 20:23:24 2012] [error] [client 127.0.0.1] File does not exist: /var/www/bemo/admin
+[Mon Jul 23 20:23:24 2012] [error] [client 127.0.0.1] File does not exist: /var/www/bemo/admin
+[Mon Jul 23 20:23:24 2012] [error] [client 127.0.0.1] File does not exist: /var/www/bemo/admin
+[Tue Jul 24 21:49:29 2012] [error] [client 127.0.0.1] client denied by server configuration: /var/www/bemo/application/index.php
+[Tue Jul 24 21:49:33 2012] [error] [client 127.0.0.1] client denied by server configuration: /var/www/bemo/application/index.php
+[Tue Jul 24 21:49:37 2012] [error] [client 127.0.0.1] client denied by server configuration: /var/www/bemo/application/index.php
