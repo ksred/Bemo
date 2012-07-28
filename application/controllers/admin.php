@@ -95,18 +95,30 @@ class Admin extends CI_Controller
         $this->load->view("/admin/artist_add", $data);
     }
     
-    function artist_edit ($id = FALSE) {
+    function artist_edit ($id = FALSE, $success = "null") {
+        $this->load->Model("Model_artist");
         $data['title'] = "Bemo Admin - Artists";
         $data['user'] = $this->session->userdata('name');
         $data['var'] = "edit";
+        $data['id'] = $id;
+        $data['success'] = $success;
         
-        $this->load->view("/admin/artist_edit", $data);
+        if ($id != FALSE) {
+            $data['artist'] = $this->Model_artist->list_single_artist($id);
+            $this->load->view("/admin/artist_edit", $data);
+        } else {
+            $data['all_artists'] = $this->Model_artist->list_artists();
+            $this->load->view("/admin/artist_list", $data);
+        }
+        
     }
     
     function artist_list () {
+        $this->load->Model("Model_artist");
         $data['title'] = "Bemo Admin - Artists";
         $data['user'] = $this->session->userdata('name');
         $data['var'] = "list";
+        $data['all_artists'] = $this->Model_artist->list_artists();
         
         $this->load->view("/admin/artist_list", $data);
     }

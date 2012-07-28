@@ -14,7 +14,6 @@ class Model_artist extends CI_Model
     }
     
     function upload() {
-        //die(var_dump($picture);
             $config['upload_path'] = UPLOAD_PATH."artist/";
             $config['allowed_types'] = 'gif|jpg|png|jpeg';
             $config['max_size']	= '500';
@@ -26,7 +25,6 @@ class Model_artist extends CI_Model
             if ( ! $this->upload->do_upload("artist-picture"))
             {
                     $error = array('error' => $this->upload->display_errors());
-                    die(var_dump($error));
                     return FALSE;
             }
             else
@@ -34,6 +32,41 @@ class Model_artist extends CI_Model
                     $data = array('upload_data' => $this->upload->data());
                     return $data;
             }
+    }
+    
+    function list_artists () {
+        $this->db->select("*");
+        $this->db->from("artist");
+       // $this->db->order_by("name", "desc");
+        $result = $this->db->get();
+        return $result;
+    }
+    
+    function list_single_artist ($id) {
+        $this->db->select("*");
+        $this->db->from("artist");
+        $this->db->where("id", $id);
+       // $this->db->order_by("name", "desc");
+        $result = $this->db->get();
+        $result = $result->result();
+        return $result[0];
+    }
+    
+    function update_artist ($data) {
+        $this->db->where("id", $data['id']);
+        $result = $this->db->update("artist", $data);
+        //die($this->db->last_query());
+        return $result;
+    }
+    
+    function get_user_picture($id) {
+        $this->db->select("picture");
+        $this->db->from("artist");
+        $this->db->where("id", $id);
+       // $this->db->order_by("name", "desc");
+        $result = $this->db->get();
+        $result = $result->result();
+        return $result[0]->picture;
     }
     
 }
