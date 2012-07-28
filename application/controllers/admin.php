@@ -124,6 +124,103 @@ class Admin extends CI_Controller
     }
     /*-------------------------------------------------------------------------*/
     
+    /*--------------------------Campaigns---------------------------------*/
+    function campaigns ($var = FALSE) {
+        $data['title'] = "Bemo Admin - Campaigns";
+        $data['user'] = $this->session->userdata('name');
+        $data['var'] = $var;
+        
+        $this->load->view("/admin/campaigns", $data);
+    }
+    
+    function campaign_add ($success = "null") {
+        $data['title'] = "Bemo Admin - Campaigns";
+        $data['user'] = $this->session->userdata('name');
+        $data['var'] = "edit";
+        $data['success'] = $success;
+        
+        $this->load->view("/admin/campaign_add", $data);
+    }
+    
+    function campaign_edit ($id = FALSE, $success = "null") {
+         $this->load->Model("Model_campaign");
+        $data['title'] = "Bemo Admin - Campaigns";
+        $data['user'] = $this->session->userdata('name');
+        $data['var'] = "edit";
+        $data['id'] = $id;
+        $data['success'] = $success;
+        
+        if ($id != FALSE) {
+            $data['campaign'] = $this->Model_campaign->list_single_campaign($id);
+            $this->load->view("/admin/campaign_edit", $data);
+        } else {
+            $data['all_campaigns'] = $this->Model_campaign->list_campaigns();
+            $this->load->view("/admin/campaign_list", $data);
+        }
+    }
+    
+    function campaign_add_artist ($success = "null") {
+        $this->load->Model("Model_campaign");
+        $this->load->Model("Model_artist");
+        $data['title'] = "Bemo Admin - Campaigns";
+        $data['user'] = $this->session->userdata('name');
+        $data['var'] = "list";
+        $data['all_campaigns'] = $this->Model_campaign->list_campaigns();
+        $data['all_artists'] = $this->Model_artist->list_artists();
+        $data['success'] = $success;
+        
+        $this->load->view("/admin/campaign_add_artist", $data);
+    }
+    
+    function campaign_remove_artist ($success = "null") {
+        $this->load->Model("Model_campaign");
+        $this->load->Model("Model_artist");
+        $data['title'] = "Bemo Admin - Campaigns";
+        $data['user'] = $this->session->userdata('name');
+        $data['var'] = "list";
+        $data['all_campaigns'] = $this->Model_campaign->list_campaigns();
+        $data['all_artists'] = $this->Model_artist->list_artists();
+        $data['success'] = $success;
+        
+        $this->load->view("/admin/campaign_remove_artist", $data);
+    }
+    
+    function campaign_close () {
+        
+    }
+    
+    function campaign_list () {
+        $this->load->Model("Model_campaign");
+        $data['title'] = "Bemo Admin - Campaigns";
+        $data['user'] = $this->session->userdata('name');
+        $data['var'] = "list";
+        $data['all_campaigns'] = $this->Model_campaign->list_campaigns();
+        
+        $this->load->view("/admin/campaign_list", $data);
+    }
+    
+    function campaign_artists_per () {
+        $this->load->Model("Model_campaign");
+        $data['title'] = "Bemo Admin - Campaigns";
+        $data['user'] = $this->session->userdata('name');
+        $data['var'] = "list";
+        $data['all_campaigns'] = $this->Model_campaign->list_campaigns();
+        
+        $this->load->view("/admin/campaign_artists_per", $data);
+    }
+    
+    function campaign_list_artists_per ($id) {
+        $this->load->Model("Model_campaign");
+        $data['title'] = "Bemo Admin - Campaigns";
+        $data['user'] = $this->session->userdata('name');
+        $data['var'] = "list";
+        $data['campaign'] = $this->Model_campaign->get_campaign_from_id($id);
+        $data['all_artists'] = $this->Model_campaign->list_artists_campaign($id);
+        
+        $this->load->view("/admin/campaign_list_artists_per", $data);
+    }
+    /*-------------------------------------------------------------------------*/
+    
     function payments () {
         $data['title'] = "Bemo Admin - Payments";
         $data['user'] = $this->session->userdata('name');

@@ -68,7 +68,7 @@ class Artist extends CI_Controller
                 $picture = substr($picture, 1);
             } 
         } else {
-            $picture = $this->Model_artist->get_user_picture($id);
+            $picture = $this->Model_artist->get_artist_picture($id);
             $upload = TRUE;
         }
         

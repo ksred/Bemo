@@ -9,6 +9,9 @@
                 <li class="<?php if ($uri == '/admin/artists') echo 'active' ?>">
                     <a href="/admin/artists">Artists</a>
                 </li>
+                <li class="<?php if ($uri == '/admin/campaigns') echo 'active' ?>">
+                    <a href="/admin/campaigns">Campaigns</a>
+                </li>
                 <li class="<?php if ($uri == '/admin/payments') echo 'active' ?>">
                     <a href="/admin/payments">Payments</a>
                 </li>

@@ -59,7 +59,7 @@ class Model_artist extends CI_Model
         return $result;
     }
     
-    function get_user_picture($id) {
+    function get_artist_picture($id) {
         $this->db->select("picture");
         $this->db->from("artist");
         $this->db->where("id", $id);
