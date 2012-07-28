@@ -82,6 +82,7 @@ class Admin extends CI_Controller
         $data['title'] = "Bemo Admin - Artists";
         $data['user'] = $this->session->userdata('name');
         $data['var'] = $var;
+        $data['section'] = "artist";
         
         $this->load->view("/admin/artists", $data);
     }
@@ -91,6 +92,7 @@ class Admin extends CI_Controller
         $data['user'] = $this->session->userdata('name');
         $data['var'] = "edit";
         $data['success'] = $success;
+        $data['section'] = "artist";
         
         $this->load->view("/admin/artist_add", $data);
     }
@@ -102,6 +104,7 @@ class Admin extends CI_Controller
         $data['var'] = "edit";
         $data['id'] = $id;
         $data['success'] = $success;
+        $data['section'] = "artist";
         
         if ($id != FALSE) {
             $data['artist'] = $this->Model_artist->list_single_artist($id);
@@ -119,6 +122,7 @@ class Admin extends CI_Controller
         $data['user'] = $this->session->userdata('name');
         $data['var'] = "list";
         $data['all_artists'] = $this->Model_artist->list_artists();
+        $data['section'] = "artist";
         
         $this->load->view("/admin/artist_list", $data);
     }
@@ -129,6 +133,7 @@ class Admin extends CI_Controller
         $data['title'] = "Bemo Admin - Campaigns";
         $data['user'] = $this->session->userdata('name');
         $data['var'] = $var;
+        $data['section'] = "campaign";
         
         $this->load->view("/admin/campaigns", $data);
     }
@@ -138,6 +143,7 @@ class Admin extends CI_Controller
         $data['user'] = $this->session->userdata('name');
         $data['var'] = "edit";
         $data['success'] = $success;
+        $data['section'] = "campaign";
         
         $this->load->view("/admin/campaign_add", $data);
     }
@@ -149,6 +155,7 @@ class Admin extends CI_Controller
         $data['var'] = "edit";
         $data['id'] = $id;
         $data['success'] = $success;
+        $data['section'] = "campaign";
         
         if ($id != FALSE) {
             $data['campaign'] = $this->Model_campaign->list_single_campaign($id);
@@ -168,6 +175,7 @@ class Admin extends CI_Controller
         $data['all_campaigns'] = $this->Model_campaign->list_campaigns();
         $data['all_artists'] = $this->Model_artist->list_artists();
         $data['success'] = $success;
+        $data['section'] = "campaign";
         
         $this->load->view("/admin/campaign_add_artist", $data);
     }
@@ -181,12 +189,13 @@ class Admin extends CI_Controller
         $data['all_campaigns'] = $this->Model_campaign->list_campaigns();
         $data['all_artists'] = $this->Model_artist->list_artists();
         $data['success'] = $success;
+        $data['section'] = "campaign";
         
         $this->load->view("/admin/campaign_remove_artist", $data);
     }
     
     function campaign_close () {
-        
+        $data['section'] = "campaign";
     }
     
     function campaign_list () {
@@ -195,6 +204,7 @@ class Admin extends CI_Controller
         $data['user'] = $this->session->userdata('name');
         $data['var'] = "list";
         $data['all_campaigns'] = $this->Model_campaign->list_campaigns();
+        $data['section'] = "campaign";
         
         $this->load->view("/admin/campaign_list", $data);
     }
@@ -205,6 +215,7 @@ class Admin extends CI_Controller
         $data['user'] = $this->session->userdata('name');
         $data['var'] = "list";
         $data['all_campaigns'] = $this->Model_campaign->list_campaigns();
+        $data['section'] = "campaign";
         
         $this->load->view("/admin/campaign_artists_per", $data);
     }
@@ -216,6 +227,7 @@ class Admin extends CI_Controller
         $data['var'] = "list";
         $data['campaign'] = $this->Model_campaign->get_campaign_from_id($id);
         $data['all_artists'] = $this->Model_campaign->list_artists_campaign($id);
+        $data['section'] = "campaign";
         
         $this->load->view("/admin/campaign_list_artists_per", $data);
     }
@@ -224,6 +236,7 @@ class Admin extends CI_Controller
     function payments () {
         $data['title'] = "Bemo Admin - Payments";
         $data['user'] = $this->session->userdata('name');
+        $data['section'] = "payments";
         
         $this->load->view("/admin/payments", $data);
     }
@@ -231,6 +244,7 @@ class Admin extends CI_Controller
     function votes () {
         $data['title'] = "Bemo Admin - Votes";
         $data['user'] = $this->session->userdata('name');
+        $data['section'] = "votes";
         
         $this->load->view("/admin/votes", $data);
     }
@@ -238,6 +252,7 @@ class Admin extends CI_Controller
     function reports () {
         $data['title'] = "Bemo Admin - Reports";
         $data['user'] = $this->session->userdata('name');
+        $data['section'] = "reports";
         
         $this->load->view("/admin/reports", $data);
     }
