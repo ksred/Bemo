@@ -30,6 +30,36 @@
             </div>
         <?php endif; ?>
     <?php endif; ?>
+    
+    <div class="span8">
+            <form class="well" method="post" action="/artist/add" enctype="multipart/form-data">
+                <label>Artist Name</label>
+                <input type="text" class="span3" placeholder="Artist Name" name="artist-name" required>
+                <label>Artist Description</label>
+                <input type="text" class="span3" placeholder="Artist Description" name="artist-desc" required>
+                <label>Picture</label>
+                <input type="file" name="artist-picture" size="30" required>
+                    <br /><br />
+                <!-- Social -->
+                <h3>Social stuff</h3>
+                <label>Artist Lastfm</label>
+                <input type="text" class="span3" placeholder="Lastfm" name="artist-social-lf">
+                <label>Artist Youtube</label>
+                <input type="text" class="span3" placeholder="Youtube" name="artist-social-yt">
+                <label>Artist Vimeo</label>
+                <input type="text" class="span3" placeholder="Vimeo" name="artist-social-vi">
+                <label>Artist Soundcloud</label>
+                <input type="text" class="span3" placeholder="Soundcloud" name="artist-social-sc">
+                <label>Artist Bandcamp</label>
+                <input type="text" class="span3" placeholder="Bandcamp" name="artist-social-bc">
+                <label>Artist Facebook</label>
+                <input type="text" class="span3" placeholder="Facebook" name="artist-social-fb">
+                <label>Artist Twitter</label>
+                <input type="text" class="span3" placeholder="Twitter" name="artist-social-tw">
+                    <br />
+                 <button type="submit" class="btn">Submit</button>
+            </form>
+    </div>
 </div>
 
 <?php $this->load->view("_template/footer.php"); ?>
