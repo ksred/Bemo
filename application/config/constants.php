@@ -38,6 +38,7 @@ define('FOPEN_READ_WRITE_CREATE_STRICT',		'x+b');
 
 /* Custom constants */
 define('UPLOAD_PATH', './images/');
+define('BASE_URL', 'http://bemo.localhost');
 
 /* End of file constants.php */
 /* Location: ./application/config/constants.php */

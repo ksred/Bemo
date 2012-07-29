@@ -28,9 +28,9 @@ class Campaign extends CI_Controller
         $result = $this->Model_campaign->insert_campaign($data);
         
         if (($result == TRUE)&&($upload != FALSE)) {
-            redirect("/admin/campaign_add/success");
+            redirect(BASE_URL."/admin/campaign_add/success");
         } else {
-            redirect("/admin/campaign_add/problem");
+            redirect(BASE_URL."/admin/campaign_add/problem");
         }
     }
     
@@ -59,9 +59,9 @@ class Campaign extends CI_Controller
         $result = $this->Model_campaign->update_campaign($data);
         
         if (($result == TRUE)&&($upload != FALSE)) {
-            redirect("/admin/campaign_edit/$id/success");
+            redirect(BASE_URL."/admin/campaign_edit/$id/success");
         } else {
-            redirect("/admin/campaign_edit/$id/problem");
+            redirect(BASE_URL."/admin/campaign_edit/$id/problem");
         }
     }
     
@@ -75,9 +75,9 @@ class Campaign extends CI_Controller
         $result = $this->Model_campaign->add_artist_campaign($data);
         
         if ($result == TRUE) {
-            redirect("/admin/campaign_add_artist/success");
+            redirect(BASE_URL."/admin/campaign_add_artist/success");
         } else {
-            redirect("/admin/campaign_add_artist/problem");
+            redirect(BASE_URL."/admin/campaign_add_artist/problem");
         }
     }
     
@@ -91,9 +91,9 @@ class Campaign extends CI_Controller
         $result = $this->Model_campaign->remove_artist_campaign($data);
         
         if ($result == TRUE) {
-            redirect("/admin/campaign_add_artist/success");
+            redirect(BASE_URL."/admin/campaign_add_artist/success");
         } else {
-            redirect("/admin/campaign_add_artist/problem");
+            redirect(BASE_URL."/admin/campaign_add_artist/problem");
         }
     }
     
@@ -101,9 +101,9 @@ class Campaign extends CI_Controller
         $result = $this->Model_campaign->list_artists_campaign($id);
         
         if ($result == TRUE) {
-            redirect("/admin/campaign_add_artist/success");
+            redirect(BASE_URL."/admin/campaign_add_artist/success");
         } else {
-            redirect("/admin/campaign_add_artist/problem");
+            redirect(BASE_URL."/admin/campaign_add_artist/problem");
         }
     }
 }

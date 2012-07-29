@@ -43,9 +43,9 @@ class Artist extends CI_Controller
         $result = $this->Model_artist->save_artist($data);
         
         if (($result == TRUE)&&($upload != FALSE)) {
-            redirect("/admin/artist_add/success");
+            redirect(BASE_URL."/admin/artist_add/success");
         } else {
-            redirect("/admin/artist_add/problem");
+            redirect(BASE_URL."/admin/artist_add/problem");
         }
     }
     
@@ -89,9 +89,9 @@ class Artist extends CI_Controller
         $result = $this->Model_artist->update_artist($data);
         
         if (($result == TRUE)&&($upload != FALSE)) {
-            redirect("/admin/artist_edit/$id/success");
+            redirect(BASE_URL."/admin/artist_edit/$id/success");
         } else {
-            redirect("/admin/artist_edit/$id/problem");
+            redirect(BASE_URL."/admin/artist_edit/$id/problem");
         }
     }
 }
