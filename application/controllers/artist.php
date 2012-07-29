@@ -5,6 +5,8 @@ class Artist extends CI_Controller
     {
         parent::__construct();
         $this->load->Model("Model_artist");
+        $role =  $this->session->userdata('role');
+        if ($role != 1) redirect(BASE_URL);
     }   
 
     function index()

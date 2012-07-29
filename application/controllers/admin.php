@@ -48,12 +48,11 @@ class Admin extends CI_Controller
         parent::__construct();
         
         $role =  $this->session->userdata('role');
-        if ($role != 1) header("Location: /user");
+        if ($role != 1) redirect(BASE_URL);
     }   
 
     function index()
     {
-        $role =  $this->session->userdata('role');
         $data['title'] = "Bemo - Admin";
         $data['user'] = $this->session->userdata('name');
         $data['section'] = "admin";
