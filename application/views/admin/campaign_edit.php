@@ -21,13 +21,21 @@
     <?php endif; ?>
     
     <div class="span8">
-            <form class="well" method="post" action="/campaign/update/<?= $campaign->id ?>" enctype="multipart/form-data">
+            <form class="well" method="post" action="/campaign/update/<?= $campaign->campaign_id ?>" enctype="multipart/form-data">
                 <label>Campaign Name</label>
                 <input type="text" class="span3" value="<?= (isset($campaign->title)) ? $campaign->title : "" ?>" name="campaign-title" required>
                 <label>Campaign Description</label>
                 <input type="text" class="span3" value="<?= (isset($campaign->desc)) ? $campaign->desc : "" ?>" name="campaign-desc" required>
                 <label>Picture</label>
                 <input type="file" name="campaign-picture" size="30">
+                    <br /><br />
+                <select name="campaign-round">
+                    <option value="1" <?= ($campaign->round  == 1) ? "selected" : "" ?>>Round 1</option>
+                    <option value="2" <?= ($campaign->round  == 2) ? "selected" : "" ?>>Round 2</option>
+                    <option value="3" <?= ($campaign->round  == 3) ? "selected" : "" ?>>Round 3</option>
+                </select>
+                <input type="hidden" value="1" name="campaign-active">
+                <input type="hidden" value="<?= $campaign->campaign_id ?>" >                
                     <br /><br />
                  <button type="submit" class="btn">Submit</button>
             </form>

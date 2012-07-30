@@ -39,6 +39,8 @@ class Campaign extends CI_Controller
         $title = $_POST['campaign-title'];
         $desc = $_POST['campaign-desc'];
         $picture = basename($_FILES['campaign-picture']['name']);
+        $round = $_POST['campaign-round'];
+        $active = $_POST['campaign-active'];
         if (strlen($picture) > 0) {
             if ((substr($picture, 0, strlen(UPLOAD_PATH)) != UPLOAD_PATH) || ($_FILES["campaign-picture"]["error"] != 0)) {
                 $upload = $this->Model_campaign->upload();
@@ -51,10 +53,12 @@ class Campaign extends CI_Controller
         }
         
         $data = array(
-                            "id" => $id,
+                            "campaign_id" => $id,
                             "title" => $title,
                             "desc" => $desc,
-                            "picture" => $picture
+                            "picture" => $picture,
+                            "round" => $round,
+                            "active" => $active
                       );
         $result = $this->Model_campaign->update_campaign($data);
         

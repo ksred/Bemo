@@ -56,6 +56,7 @@ class Admin extends CI_Controller
         $role =  $this->session->userdata('role');
         $data['title'] = "Bemo - Admin";
         $data['user'] = $this->session->userdata('name');
+        $data['section'] = "admin";
         
         $this->load->view("admin/index", $data);
     }
@@ -153,7 +154,7 @@ class Admin extends CI_Controller
         $data['title'] = "Bemo Admin - Campaigns";
         $data['user'] = $this->session->userdata('name');
         $data['var'] = "edit";
-        $data['id'] = $id;
+        $data['campaign_id'] = $id;
         $data['success'] = $success;
         $data['section'] = "campaign";
         

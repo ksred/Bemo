@@ -10,6 +10,12 @@ class Model_campaign extends CI_Model
     
     function insert_campaign ($data) {
         $result = $this->db->insert("campaign", $data);
+        $data["round"] = 2;
+        $data["active"] = 0;
+        $result = $this->db->insert("campaign", $data);
+        $data["round"] = 3;
+        $data["active"] = 0;
+        $result = $this->db->insert("campaign", $data);
         return $result;
     }
     
@@ -37,6 +43,7 @@ class Model_campaign extends CI_Model
     function list_campaigns () {
         $this->db->select("*");
         $this->db->from("campaign");
+        $this->db->where("active", "1");
        // $this->db->order_by("name", "desc");
         $result = $this->db->get();
         return $result;
@@ -45,7 +52,7 @@ class Model_campaign extends CI_Model
     function list_single_campaign ($id) {
         $this->db->select("*");
         $this->db->from("campaign");
-        $this->db->where("id", $id);
+        $this->db->where("campaign_id", $id);
        // $this->db->order_by("name", "desc");
         $result = $this->db->get();
         $result = $result->result();
@@ -53,7 +60,12 @@ class Model_campaign extends CI_Model
     }
     
     function update_campaign ($data) {
-        $this->db->where("id", $data['id']);
+        //Make all other rounds inactive
+        $this->db->where("campaign_id", $data["campaign_id"]);
+        $all_inactive = array("active" => "0");
+        $this->db->update("campaign", $all_inactive);
+        $array = array ("campaign_id" => $data["campaign_id"], "round" => $data["round"]);
+        $this->db->where($array);
         $result = $this->db->update("campaign", $data);
         //die($this->db->last_query());
         return $result;
@@ -62,7 +74,7 @@ class Model_campaign extends CI_Model
     function get_campaign_picture($id) {
         $this->db->select("picture");
         $this->db->from("campaign");
-        $this->db->where("id", $id);
+        $this->db->where("campaign_id", $id);
        // $this->db->order_by("name", "desc");
         $result = $this->db->get();
         $result = $result->result();
