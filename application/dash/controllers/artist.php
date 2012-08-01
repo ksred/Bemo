@@ -9,9 +9,55 @@ class Artist extends CI_Controller
         if ($role != 1) redirect(BASE_URL);
     }   
 
-    function index()
+    function index($var = FALSE)
     {
+        $data['title'] = "Bemo Admin - Artists";
+        $data['user'] = $this->session->userdata('name');
+        $data['var'] = $var;
+        $data['section'] = "artist";
         
+        $this->load->view("/artist/index", $data);
+    }
+    
+    /*----------------------------Artist------------------------------------*/
+    function artist_add ($success = "null") {
+        $data['title'] = "Bemo Admin - Artists";
+        $data['user'] = $this->session->userdata('name');
+        $data['var'] = "edit";
+        $data['success'] = $success;
+        $data['section'] = "artist";
+        
+        $this->load->view("/artist/add", $data);
+    }
+    
+    function artist_edit ($id = FALSE, $success = "null") {
+        $this->load->Model("Model_artist");
+        $data['title'] = "Bemo Admin - Artists";
+        $data['user'] = $this->session->userdata('name');
+        $data['var'] = "edit";
+        $data['id'] = $id;
+        $data['success'] = $success;
+        $data['section'] = "artist";
+        
+        if ($id != FALSE) {
+            $data['artist'] = $this->Model_artist->list_single_artist($id);
+            $this->load->view("/artist/edit", $data);
+        } else {
+            $data['all_artists'] = $this->Model_artist->list_artists();
+            $this->load->view("/artist/list", $data);
+        }
+        
+    }
+    
+    function artist_list () {
+        $this->load->Model("Model_artist");
+        $data['title'] = "Bemo Admin - Artists";
+        $data['user'] = $this->session->userdata('name');
+        $data['var'] = "list";
+        $data['all_artists'] = $this->Model_artist->list_artists();
+        $data['section'] = "artist";
+        
+        $this->load->view("/artist/list", $data);
     }
     
     function add () {

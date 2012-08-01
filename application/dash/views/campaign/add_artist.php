@@ -18,8 +18,8 @@
         <?php endif; ?>
     <?php endif; ?>
     
-    <div class="alert">Remove artist from campaigns</div>
-    <form class="well" method="post" action="/campaign/remove_artist/" enctype="multipart/form-data">
+    <div class="alert">Add artist to campaigns</div>
+    <form class="well" method="post" action="/campaign/campaign_add_artist/" enctype="multipart/form-data">
         <?php if (isset($all_campaigns)) : ?>
         <label for="campaign">Choose campaign</label>
         <select name="campaign">

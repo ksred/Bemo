@@ -12,7 +12,7 @@
         <div class="span3"><img src="<?= $campaign->picture ?>" /></div>
         <div class="span1"><?= $campaign->title ?></div>
         <div class="span2"><?= $campaign->desc ?></div>
-        <div class="btn"><a href="/admin/campaign_edit/<?= $campaign->campaign_id ?>">Edit</a></div>
+        <div class="btn"><a href="/campaign/edit/<?= $campaign->campaign_id ?>">Edit</a></div>
     </div>
     <?php endforeach; ?>
     <?php endif; ?>

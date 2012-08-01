@@ -6,19 +6,19 @@
             </a>
             <ul class="nav">
                 <li class="<?php if ($section == 'artist') echo 'active' ?>">
-                    <a href="/admin/artists">Artists</a>
+                    <a href="/artist">Artists</a>
                 </li>
                 <li class="<?php if ($section == 'campaign') echo 'active' ?>">
-                    <a href="/admin/campaigns">Campaigns</a>
+                    <a href="/campaign">Campaigns</a>
                 </li>
                 <li class="<?php if ($section == 'payments') echo 'active' ?>">
-                    <a href="/admin/payments">Payments</a>
+                    <a href="/payment">Payments</a>
                 </li>
                 <li class="<?php if ($section == 'votes') echo 'active' ?>">
-                    <a href="/admin/votes">Votes</a>
+                    <a href="/vote">Votes</a>
                 </li>
                 <li class="<?php if ($section == 'reports') echo 'active' ?>">
-                    <a href="/admin/reports">Reports</a>
+                    <a href="/report">Reports</a>
                 </li>
             </ul>
         </div>

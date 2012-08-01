@@ -37,7 +37,7 @@ define('FOPEN_WRITE_CREATE_STRICT',				'xb');
 define('FOPEN_READ_WRITE_CREATE_STRICT',		'x+b');
 
 /* Custom constants */
-define('UPLOAD_PATH', './../images/');
+define('UPLOAD_PATH', './images/');
 define('BASE_URL', 'http://dash.bemo.localhost');
 
 /* End of file constants.php */

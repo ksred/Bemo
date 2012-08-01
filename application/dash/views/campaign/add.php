@@ -21,7 +21,7 @@
     <?php endif; ?>
     
     <div class="span8">
-            <form class="well" method="post" action="/campaign/add/" enctype="multipart/form-data">
+            <form class="well" method="post" action="/campaign/campaign_add/" enctype="multipart/form-data">
                 <label>Campaign Title</label>
                 <input type="text" class="span3" placeholder="Campaign Name" name="campaign-title" required>
                 <label>Campaign Description</label>

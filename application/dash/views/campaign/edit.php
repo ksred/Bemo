@@ -21,7 +21,7 @@
     <?php endif; ?>
     
     <div class="span8">
-            <form class="well" method="post" action="/campaign/update/<?= $campaign->campaign_id ?>" enctype="multipart/form-data">
+            <form class="well" method="post" action="/campaign/campaign_update/<?= $campaign->campaign_id ?>" enctype="multipart/form-data">
                 <label>Campaign Name</label>
                 <input type="text" class="span3" value="<?= (isset($campaign->title)) ? $campaign->title : "" ?>" name="campaign-title" required>
                 <label>Campaign Description</label>
