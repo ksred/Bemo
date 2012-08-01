@@ -4,6 +4,8 @@ class User extends CI_Controller
     function __construct()
     {
         parent::__construct();
+        $role =  $this->session->userdata('role');
+        if (!isset($role) && ($role != 1)) redirect(BASE_URL);
     }   
 
     function index()
