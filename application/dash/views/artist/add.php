@@ -20,7 +20,7 @@
     <?php endif; ?>
     
     <div class="span8">
-            <form class="well" method="post" action="/artist/add" enctype="multipart/form-data">
+            <form class="well" method="post" action="/artist/artist_add" enctype="multipart/form-data">
                 <label>Artist Name</label>
                 <input type="text" class="span3" placeholder="Artist Name" name="artist-name" required>
                 <label>Artist Description</label>

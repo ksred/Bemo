@@ -21,7 +21,7 @@
     <?php endif; ?>
     
     <div class="span8">
-            <form class="well" method="post" action="/artist/update/<?= $artist->id ?>" enctype="multipart/form-data">
+            <form class="well" method="post" action="/artist/artist_update/<?= $artist->id ?>" enctype="multipart/form-data">
                 <label>Artist Name</label>
                 <input type="text" class="span3" value="<?= (isset($artist->name)) ? $artist->name : "" ?>" name="artist-name" required>
                 <label>Artist Description</label>

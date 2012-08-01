@@ -12,7 +12,7 @@
         <div class="span3"><img src="<?= $artist->picture ?>" /></div>
         <div class="span1"><?= $artist->name ?></div>
         <div class="span2"><?= $artist->desc ?></div>
-        <div class="btn"><a href="/admin/artist_edit/<?= $artist->id ?>">Edit</a></div>
+        <div class="btn"><a href="/artist/edit/<?= $artist->id ?>">Edit</a></div>
     </div>
     <?php endforeach; ?>
     <?php endif; ?>

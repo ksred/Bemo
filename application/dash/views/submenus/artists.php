@@ -7,7 +7,7 @@
             <a href="/artist/edit">Edit artists</a>
         </li>
         <li>
-            <a href="/artist/list">View all artists</a>
+            <a href="/artist/list_all">View all artists</a>
         </li>
     </ul>
 </div>

@@ -20,7 +20,7 @@ class Artist extends CI_Controller
     }
     
     /*----------------------------Artist------------------------------------*/
-    function artist_add ($success = "null") {
+    function add ($success = "null") {
         $data['title'] = "Bemo Admin - Artists";
         $data['user'] = $this->session->userdata('name');
         $data['var'] = "edit";
@@ -30,7 +30,7 @@ class Artist extends CI_Controller
         $this->load->view("/artist/add", $data);
     }
     
-    function artist_edit ($id = FALSE, $success = "null") {
+    function edit ($id = FALSE, $success = "null") {
         $this->load->Model("Model_artist");
         $data['title'] = "Bemo Admin - Artists";
         $data['user'] = $this->session->userdata('name');
@@ -49,7 +49,7 @@ class Artist extends CI_Controller
         
     }
     
-    function artist_list () {
+    function list_all () {
         $this->load->Model("Model_artist");
         $data['title'] = "Bemo Admin - Artists";
         $data['user'] = $this->session->userdata('name');
@@ -60,7 +60,7 @@ class Artist extends CI_Controller
         $this->load->view("/artist/list", $data);
     }
     
-    function add () {
+    function artist_add () {
         //die(var_dump($_FILES));
         $name = $_POST['artist-name'];
         $desc = $_POST['artist-desc'];
@@ -97,7 +97,7 @@ class Artist extends CI_Controller
         }
     }
     
-    function update ($id) {
+    function artist_update ($id) {
         //die(var_dump($_FILES["artist-picture"]["error"]));
         $name = $_POST['artist-name'];
         $desc = $_POST['artist-desc'];
@@ -137,9 +137,9 @@ class Artist extends CI_Controller
         $result = $this->Model_artist->update_artist($data);
         
         if (($result == TRUE)&&($upload != FALSE)) {
-            redirect(BASE_URL."/admin/artist_edit/$id/success");
+            redirect(BASE_URL."/artist/edit/$id/success");
         } else {
-            redirect(BASE_URL."/admin/artist_edit/$id/problem");
+            redirect(BASE_URL."/artist/edit/$id/problem");
         }
     }
 }
