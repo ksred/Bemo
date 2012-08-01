@@ -28,8 +28,8 @@
                 <input type="text" class="span3" placeholder="Description" name="campaign-desc" required>
                 <label>Campaign Picture</label>
                 <input type="file" name="campaign-picture" size="30">
-                <input type="text" name="round" value="1" readonly>
-                <input type="text" name="active" value="1" readonly>
+                <input type="hidden" name="campaign-round" value="1" readonly>
+                <input type="hidden" name="campaign-active" value="1" readonly>
                 <br /><br />
                 <button type="submit" class="btn">Submit</button>
             </form>

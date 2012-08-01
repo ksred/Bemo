@@ -115,6 +115,8 @@ class Campaign extends CI_Controller
     function campaign_add () {
         $title = $_POST['campaign-title'];
         $desc = $_POST['campaign-desc'];
+        $round = $_POST['campaign-round'];
+        $active = $_POST['campaign-active'];
         $picture = basename($_FILES['campaign-picture']['name']);
         $upload = $this->Model_campaign->upload();
         $picture = UPLOAD_PATH."campaign/".$upload["upload_data"]["file_name"];
@@ -123,7 +125,9 @@ class Campaign extends CI_Controller
         $data = array(
                             "title" => $title,
                             "desc" => $desc,
-                            "picture" => $picture
+                            "picture" => $picture,
+                            "round" => $round,
+                            "active" => $active
                       );
         $result = $this->Model_campaign->insert_campaign($data);
         
