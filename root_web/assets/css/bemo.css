@@ -1,3 +1,11 @@
 .spacer {
     margin-top: 50px;
 }
+
+body {
+    background: url("../img/arches.png") repeat;
+}
+
+.header-top {
+    background: rgba(0, 0, 0, 0.3);
+}

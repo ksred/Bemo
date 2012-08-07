@@ -11,7 +11,7 @@ class Web extends CI_Controller {
 	{
 		$data['title'] = "Bemo";
                 $this->load->database("default", TRUE);
-		$this->load->view('web/landing', $data);
+		$this->load->view('index', $data);
 	}
 }
 

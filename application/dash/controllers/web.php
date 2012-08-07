@@ -6,14 +6,14 @@ class Web extends CI_Controller {
 	{
 	    parent::__construct();
 		$role =  $this->session->userdata('role');
-		if (!isset($role) && ($role != 1)) redirect(BASE_URL);
+		//if (!isset($role) && ($role != 1)) redirect(BASE_URL."/login");
 	}   
 
 	public function index()
 	{
 		$data['title'] = "Bemo";
                 $this->load->database("default", TRUE);
-		$this->load->view('welcome_message', $data);
+		$this->load->view('index', $data);
 	}
 }
 

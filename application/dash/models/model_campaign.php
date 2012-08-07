@@ -9,6 +9,8 @@ class Model_campaign extends CI_Model
     }
     
     function insert_campaign ($data) {
+        $campaign_id = $this->get_max_campaign_no() + 1;
+        $data["campaign_id"] = $campaign_id;
         $result = $this->db->insert("campaign", $data);
         $data["round"] = 2;
         $data["active"] = 0;
@@ -17,6 +19,16 @@ class Model_campaign extends CI_Model
         $data["active"] = 0;
         $result = $this->db->insert("campaign", $data);
         return $result;
+    }
+    
+    function get_max_campaign_no() {
+        $this->db->select("campaign_id");
+        $this->db->from("campaign");
+        $this->db->limit(1);
+        $this->db->order_by("campaign_id", "desc");
+        $result = $this->db->get()->result();
+        
+        return $result[0]->campaign_id;
     }
     
     function upload() {
