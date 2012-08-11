@@ -91,9 +91,9 @@ class Artist extends CI_Controller
         $result = $this->Model_artist->save_artist($data);
         
         if (($result == TRUE)&&($upload != FALSE)) {
-            redirect(BASE_URL."/admin/artist_add/success");
+            redirect(BASE_URL."/artist/add/success");
         } else {
-            redirect(BASE_URL."/admin/artist_add/problem");
+            redirect(BASE_URL."/artist/add/problem");
         }
     }
     
