@@ -8,6 +8,16 @@ class Model_campaign extends CI_Model
         $this->db = $this->load->database("default", TRUE);
     }
     
+    function get_active_campaigns() {
+        $this->db->select("*");
+        $this->db->from("campaign");
+        $this->db->where("active", "1");
+        $this->db->order_by("campaign_id", "desc");
+        $result = $this->db->get()->result();
+        
+        return $result;
+    }
+    
     function insert_campaign ($data) {
         $campaign_id = $this->get_max_campaign_no() + 1;
         $data["campaign_id"] = $campaign_id;
@@ -34,7 +44,7 @@ class Model_campaign extends CI_Model
     function upload() {
             $config['upload_path'] = UPLOAD_PATH."campaign/";
             $config['allowed_types'] = 'gif|jpg|png|jpeg';
-            $config['max_size']	= '500';
+            $config['max_size']	= '2500';
             $config['max_width']  = '1920';
             $config['max_height']  = '1920';
 

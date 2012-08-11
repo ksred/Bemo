@@ -16,7 +16,7 @@ class Model_artist extends CI_Model
     function upload() {
             $config['upload_path'] = UPLOAD_PATH."artist/";
             $config['allowed_types'] = 'gif|jpg|png|jpeg';
-            $config['max_size']	= '500';
+            $config['max_size']	= '2000';
             $config['max_width']  = '1920';
             $config['max_height']  = '1920';
 
@@ -25,6 +25,7 @@ class Model_artist extends CI_Model
             if ( ! $this->upload->do_upload("artist-picture"))
             {
                     $error = array('error' => $this->upload->display_errors());
+                    //die(UPLOAD_PATH.var_dump($error));
                     return FALSE;
             }
             else

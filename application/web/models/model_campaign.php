@@ -8,6 +8,40 @@ class Model_campaign extends CI_Model
         $this->db = $this->load->database("default", TRUE);
     }
     
+    function get_active_campaigns() {
+        $this->db->select("*");
+        $this->db->from("campaign");
+        $this->db->where("active", "1");
+        $this->db->order_by("campaign_id", "desc");
+        $result = $this->db->get()->result();
+        
+        return $result;
+    }
+    
+    function get_latest_active_campaign() {
+        $this->db->select("*");
+        $this->db->from("campaign");
+        $this->db->where("active", "1");
+        $this->db->order_by("campaign_id", "desc");
+        $this->db->limit("1");
+        $result = $this->db->get()->result();
+        
+        return $result[0];
+    }
+    
+    function get_top_artists_campaign($id, $limit) {
+        $this->db->select("*");
+        $this->db->from("campaign_artists ca, artist a");
+        $this->db->where("ca.campaign_id", $id);
+        $this->db->where("ca.artist_id", "a.id");
+        $this->db->limit($limit);
+        $this->db->order_by("campaign_id", "desc");
+        $result = $this->db->get()->result();
+        die($this->db->last_query());
+        
+        return $result;
+    }
+    
     function insert_campaign ($data) {
         $result = $this->db->insert("campaign", $data);
         $data["round"] = 2;

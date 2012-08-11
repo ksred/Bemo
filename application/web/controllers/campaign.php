@@ -5,13 +5,20 @@ class Campaign extends CI_Controller
     {
         parent::__construct();
         $this->load->Model("Model_campaign");
-        $role =  $this->session->userdata('role');
-        if ($role != 1) redirect(BASE_URL);
     }   
 
     function index()
     {
+        $data['title'] = "Bemo Admin - Campaigns";
+        $data['user'] = $this->session->userdata('name');
+        $data['section'] = "campaign";
+        $data['campaigns'] = $this->Model_campaign->get_active_campaigns();
         
+        $latest = $this->Model_campaign->get_latest_active_campaign();
+        $latest_artists = $this->Model_campaign->get_top_artists_campaign($latest->campaign_id, 5);
+        var_dump($latest_artists);
+        
+        $this->load->view("/campaign/index", $data);
     }
     
     function add () {
