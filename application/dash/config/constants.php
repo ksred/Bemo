@@ -38,6 +38,8 @@ define('FOPEN_READ_WRITE_CREATE_STRICT',		'x+b');
 
 /* Custom constants */
 define('UPLOAD_PATH', './images/');
+$environment = getenv("ENVIRONMENT");
+define('ENVIRONMENT', $environment);
 
 switch (ENVIRONMENT) {
     case ("development"):

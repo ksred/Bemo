@@ -14,8 +14,9 @@
 | path to your installation.
 |
 */
+$environment = getenv("ENVIRONMENT");
 
-switch (ENVIRONMENT) {
+switch ($environment) {
     case ("development"):
         $config['base_url']	= 'http://dash.bemo.localhost/';
         break;

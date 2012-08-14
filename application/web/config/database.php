@@ -48,7 +48,8 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-switch (ENVIRONMENT) {
+$environment = getenv("ENVIRONMENT");
+switch ($environment) :
     case ("development"):
         $db['default']['hostname'] = 'localhost';
         $db['default']['username'] = 'bemo';

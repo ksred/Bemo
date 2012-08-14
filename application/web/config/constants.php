@@ -37,9 +37,11 @@ define('FOPEN_WRITE_CREATE_STRICT',				'xb');
 define('FOPEN_READ_WRITE_CREATE_STRICT',		'x+b');
 
 /* Custom constants */
+$environment = getenv("ENVIRONMENT");
+define('ENVIRONMENT', $environment);
 define('UPLOAD_PATH', './images/');
 
-switch (ENVIRONMENT) {
+switch ($environment) {
     case ("development"):
         $config['base_url']	= 'http://bemo.localhost/';
         define('BASE_URL', 'http://bemo.localhost');

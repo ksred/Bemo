@@ -14,7 +14,8 @@
 | path to your installation.
 |
 */
-switch (ENVIRONMENT) {
+$environment = getenv("ENVIRONMENT");
+switch ($environment) {
     case ("development"):
         $config['base_url']	= 'http://bemo.localhost/';
         break;
