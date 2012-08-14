@@ -41,11 +41,11 @@ define('UPLOAD_PATH', './images/');
 
 switch (ENVIRONMENT) {
     case ("development"):
-        $config['base_url']	= 'http://dash.bemo.localhost/';
+        $config['base_url']	= 'http://bemo.localhost/';
         define('BASE_URL', 'http://bemo.localhost');
         break;
     case ("staging"):
-        $config['base_url']	= 'http://dash.bemo.fm/';
+        $config['base_url']	= 'http://bemo.fm/';
         define('BASE_URL', 'http://bemo.fm');
         break;
 }
