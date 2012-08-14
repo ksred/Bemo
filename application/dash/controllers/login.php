@@ -5,7 +5,7 @@ class Login extends CI_Controller
     {
         parent::__construct();
 	$user = $this->session->userdata('name');
-	if (isset($user)) redirect("/");
+	//if (isset($user)) redirect("/");
     }   
 
     	public function index () {

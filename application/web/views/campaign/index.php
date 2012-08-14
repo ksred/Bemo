@@ -9,9 +9,11 @@
                     <img src="<?= $campaign->picture ?>" />
                 </div>
                 <?php if(isset($campaign_artist)) : ?>
-                    <?php foreach($campaign_artist as $campaign_a) : ?>
-                        <div class="">
-                            
+                    <?php foreach($campaign_artist as $a) : ?>
+                        <div class="campaign-artist span3">
+                            <div class="campaign-artist-pic">
+                                <img src="<?= $a->picture ?>" />
+                            </div>
                         </div>
                     <?php endforeach; ?>
                 <?php endif; ?>

@@ -9,3 +9,95 @@ body {
 .header-top {
     background: rgba(0, 0, 0, 0.3);
 }
+
+/*-----------Front page-------------*/
+.campaign-lead-home {
+    height: 340px;
+    background-position: center center;
+    position: relative;
+    float: left;
+}
+/*Lead pic*/
+.campaign-lead-text {
+    
+}
+
+.campaign-lead-title {
+    float: left;
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    font-family: "Helvetica";
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.campaign-lead-desc {
+    float: left;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    font-family: Helvetica;
+    font-size: 18px;
+}
+/*---*/
+.campaign-lead-artists {
+    position: relative;
+    float: left;
+    margin-left: 30px;
+    margin-top: -100px;
+}
+
+.campaign-artist {
+    position: relative;
+    float: left;
+    margin: 10px;
+    height: 200px;
+    width: 200px;
+    background-position: center center;
+    background-size: auto 100%;
+    box-shadow: 0px 0px 15px -5px #000;
+}
+
+.campaign-artist-text {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+    font-family: "Helvetica";
+    font-size: 22px;
+    font-weight: bold;
+    padding: 10px 10px;
+}
+
+.campaign-artist-vote {
+    background-color: #45A7A6;
+    padding: 10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 28px;
+    position: absolute;
+    left: 160px;
+    top: 140px;
+    box-shadow: 0px 0px 10px -5px #000;
+    -moz-transition: all linear 0.2s;
+    -webkit-transition: all linear 0.2s;
+    transition: all linear 0.2s;
+}
+
+.campaign-artist-vote:hover {
+    cursor: pointer;
+    -moz-transform: rotate(20deg);
+    -webkit-transform: rotate(20deg);
+    transform: rotate(20deg);
+}
+
+.campaign-artist-vote.success {
+    background-color: blue;
+}
+
+.campaign-artist-vote.failure {
+    background-color: red;
+}

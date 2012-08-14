@@ -24,7 +24,7 @@
         <label for="campaign">Choose campaign</label>
         <select name="campaign">
         <?php foreach ($all_campaigns->result() as $campaign) : ?>
-            <option value="<?= $campaign->id?>"><?= $campaign->title ?></option>
+            <option value="<?= $campaign->campaign_id?>"><?= $campaign->title ?></option>
         <?php endforeach; ?>
         </select>
         <?php endif; ?>

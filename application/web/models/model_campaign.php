@@ -33,11 +33,10 @@ class Model_campaign extends CI_Model
         $this->db->select("*");
         $this->db->from("campaign_artists ca, artist a");
         $this->db->where("ca.campaign_id", $id);
-        $this->db->where("ca.artist_id", "a.id");
+        $this->db->where("ca.artist_id = a.id");
         $this->db->limit($limit);
         $this->db->order_by("campaign_id", "desc");
         $result = $this->db->get()->result();
-        die($this->db->last_query());
         
         return $result;
     }
