@@ -38,7 +38,17 @@ define('FOPEN_READ_WRITE_CREATE_STRICT',		'x+b');
 
 /* Custom constants */
 define('UPLOAD_PATH', './images/');
-define('BASE_URL', 'http://dash.bemo.localhost');
+
+switch (ENVIRONMENT) {
+    case ("development"):
+        $config['base_url']	= 'http://dash.bemo.localhost/';
+        define('BASE_URL', 'http://dash.bemo.localhost');
+        break;
+    case ("staging"):
+        $config['base_url']	= 'http://dash.bemo.fm/';
+        define('BASE_URL', 'http://dash.bemo.fm');
+        break;
+}
 
 /* End of file constants.php */
 /* Location: ./application/config/constants.php */

@@ -14,8 +14,15 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://dash.bemo.localhost/';
 
+switch (ENVIRONMENT) {
+    case ("development"):
+        $config['base_url']	= 'http://dash.bemo.localhost/';
+        break;
+    case ("staging"):
+        $config['base_url']	= 'http://dash.bemo.fm/';
+        break;
+}
 /*
 |--------------------------------------------------------------------------
 | Index File
