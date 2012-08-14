@@ -42,10 +42,8 @@ class MY_Controller extends CI_Controller {
 
 function __construct () {
 	parent::__construct();
-	$name = $this->session->userdata('name');
-	if (!$name) :
-		header("Location: /construction");
-	endif;
+	$role =  $this->session->userdata('role');
+        if ($role != 1) redirect(BASE_URL);
 }
 
 }
