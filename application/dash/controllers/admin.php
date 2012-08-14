@@ -48,7 +48,7 @@ class Admin extends CI_Controller
         parent::__construct();
         
         $role =  $this->session->userdata('role');
-        if (!isset($role) && ($role != 1)) redirect(BASE_URL);
+        if ($role != 1) redirect(BASE_URL);
     }   
 
     function index()

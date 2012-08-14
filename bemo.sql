@@ -36,7 +36,7 @@ CREATE TABLE `artist` (
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `picture` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -45,7 +45,7 @@ CREATE TABLE `artist` (
 
 LOCK TABLES `artist` WRITE;
 /*!40000 ALTER TABLE `artist` DISABLE KEYS */;
-INSERT INTO `artist` VALUES (1,'Dreamers','We are all dreamers dreeaaaming','last.fm/last','www.youtube.com/test','vimeo.com/vimeo','soundcloud.com/sc','bandcamp.com/bc','facebook.com/fb','twitter.com/tw','2012-07-28 08:00:51','/images/artist/2-Lelouch-Lamperouge1.jpg'),(2,'Archer','King of thrones','last.fm/archer','','','soundcloud.com/archer','','','twitter.com/archer','2012-07-28 08:04:57','/images/artist/Ichigo-kurosaki-ichigo-15959170-640-480.jpg'),(3,'Bemo','Bemobemobemo','','','','','','','','2012-07-28 09:46:54','/images/artist/Kurosaki_Ichigo_Chibi_Bleach.JPG'),(4,'Kyle','Badass','lastfm','','','','','','','2012-08-07 21:16:24','/images/artist/dreamers2.jpeg'),(5,'Kyle','Badass','','','','','','','','2012-08-07 21:17:27','/images/artist/2-Lelouch-Lamperouge3.jpg');
+INSERT INTO `artist` VALUES (1,'Dreamers','We are all dreamers dreeaaaming','last.fm/last','www.youtube.com/test','vimeo.com/vimeo','soundcloud.com/sc','bandcamp.com/bc','facebook.com/fb','twitter.com/tw','2012-07-28 08:00:51','/images/artist/2-Lelouch-Lamperouge1.jpg'),(2,'Archer','King of thrones','last.fm/archer','','','soundcloud.com/archer','','','twitter.com/archer','2012-07-28 08:04:57','/images/artist/Ichigo-kurosaki-ichigo-15959170-640-480.jpg'),(3,'Bemo','Bemobemobemo','','','','','','','','2012-07-28 09:46:54','/images/artist/Kurosaki_Ichigo_Chibi_Bleach.JPG'),(4,'Kyle','Badass','lastfm','','','','','','','2012-08-07 21:16:24','/images/artist/Luffy-one-piece-7934118-704-395.jpg'),(5,'Kyle','Badass','','','','','','','','2012-08-07 21:17:27','/images/artist/Luffy-one-piece-7934118-704-3951.jpg'),(6,'Bakemono','It\'s a monster','','','','','','','','2012-08-14 17:00:57','/images/artist/nisemonogatari-11_02.jpg'),(7,'Shika','Another horror','','','','','','','','2012-08-14 17:17:09','/images/artist/nisemonogatari-11.jpg');
 /*!40000 ALTER TABLE `artist` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -91,7 +91,7 @@ CREATE TABLE `campaign` (
   `active` int(11) DEFAULT NULL,
   `campaign_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -100,7 +100,7 @@ CREATE TABLE `campaign` (
 
 LOCK TABLES `campaign` WRITE;
 /*!40000 ALTER TABLE `campaign` DISABLE KEYS */;
-INSERT INTO `campaign` VALUES (1,'Bempop','Pop stardom','2012-08-07 20:13:21','/images/campaign/bleach_ichigo00371.jpg',1,0,1),(2,'Bempop','Pop stardom','2012-08-07 20:13:21','/images/campaign/bleach_ichigo00371.jpg',2,1,1),(3,'Bempop','Pop stardom','2012-08-07 20:13:21','/images/campaign/bleach_ichigo00371.jpg',3,0,1);
+INSERT INTO `campaign` VALUES (1,'Bempop','Pop stardom','2012-08-07 20:13:21','/images/campaign/My-Neighbor-Totoro-Wallpaper-Anime-HD-Widescreen-Wallpapers-1920-1080.jpg',1,1,1),(2,'Bempop','Pop stardom','2012-08-07 20:13:21','/images/campaign/bleach_ichigo00371.jpg',2,0,1),(3,'Bempop','Pop stardom','2012-08-07 20:13:21','/images/campaign/bleach_ichigo00371.jpg',3,0,1),(4,'Nise','Monogatari','2012-08-11 12:46:02','/images/campaign/nisemonogatari_0000933_thumb.jpg',1,1,2),(5,'Nise','Monogatari','2012-08-11 12:46:02','/images/campaign/nisemonogatari_0000933_thumb.jpg',2,0,2),(6,'Nise','Monogatari','2012-08-11 12:46:02','/images/campaign/nisemonogatari_0000933_thumb.jpg',3,0,2);
 /*!40000 ALTER TABLE `campaign` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -125,7 +125,7 @@ CREATE TABLE `campaign_artists` (
 
 LOCK TABLES `campaign_artists` WRITE;
 /*!40000 ALTER TABLE `campaign_artists` DISABLE KEYS */;
-INSERT INTO `campaign_artists` VALUES (1,1,1),(5,1,2),(6,2,1);
+INSERT INTO `campaign_artists` VALUES (1,2,2),(2,2,1),(3,2,3),(4,1,1),(5,2,6),(6,2,7);
 /*!40000 ALTER TABLE `campaign_artists` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -270,4 +270,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2012-08-11 14:15:08
+-- Dump completed on 2012-08-14 21:30:40

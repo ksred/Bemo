@@ -19,6 +19,8 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
+		$role =  $this->session->userdata('role');
+		if ($role != 1) redirect(BASE_URL);
 		$this->load->view('welcome_message');
 	}
 }

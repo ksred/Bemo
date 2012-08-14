@@ -33,5 +33,11 @@ class User extends CI_Controller
             header("Location: /login/error");
         }
     }
+    
+    public function logout() {
+        $this->session->sess_destroy();
+        $this->session->unset_userdata("role");
+        header("Location: /");
+    }
 }
 ?>

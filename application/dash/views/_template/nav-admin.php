@@ -21,6 +21,7 @@
                     <a href="/report">Reports</a>
                 </li>
             </ul>
+            <a href="/user/logout" class="btn btn-success pull-right">Logout</a>
         </div>
     </div>
 </div>

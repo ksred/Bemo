@@ -7,6 +7,8 @@ class Web extends CI_Controller {
 	    parent::__construct();
 		$role =  $this->session->userdata('role');
 		//if (!isset($role) && ($role != 1)) redirect(BASE_URL."/login");
+		$role =  $this->session->userdata('role');
+		if ($role != 1) redirect(BASE_URL);	
 	}   
 
 	public function index()

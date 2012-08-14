@@ -26,10 +26,14 @@ class User extends CI_Controller
                 "name" => $result[0]->name,
                 "role" => $result[0]->role);
             $this->session->set_userdata($data);
-            header("Location: /admin");
+            header("Location: /");
         } else {
             header("Location: /login/error");
         }
+    }
+    
+    public function logout() {
+        $this->session->sess_destroy();
     }
 }
 ?>
