@@ -41,7 +41,7 @@ define('UPLOAD_PATH', './images/');
 $environment = getenv("ENVIRONMENT");
 define('ENVIRONMENT', $environment);
 
-switch (ENVIRONMENT) {
+switch ($environment) {
     case ("development"):
         $config['base_url']	= 'http://dash.bemo.localhost/';
         define('BASE_URL', 'http://dash.bemo.localhost');
