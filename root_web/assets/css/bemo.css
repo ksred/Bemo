@@ -101,3 +101,19 @@ body {
 .campaign-artist-vote.failure {
     background-color: red;
 }
+
+/*------------Voting-------------*/
+.vote-success {
+    background-color: blue;
+    font-size: 20px;
+}
+
+.vote-failure {
+    background-color: red;
+    font-size: 20px;
+}
+
+
+.vote-success > .vote-artist, .vote-failure > .vote-artist {
+    padding: 0px 0px 0px 8px;
+}
