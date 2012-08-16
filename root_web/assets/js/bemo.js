@@ -16,6 +16,7 @@ $(document).ready( function () {
                 round_id : round
             },
             success: function (result) {
+                $('.campaign-artist-vote').removeClass('vote-success').removeClass('vote-failure');
                 if (result=="TRUE") {
                     $('.campaign-artist-vote')
                     .find("[data-artistid='"+artist+"'].[data-round='"+round+"'].[data-campaignid='"+campaign+"']")
