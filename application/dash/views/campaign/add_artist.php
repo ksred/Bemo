@@ -36,6 +36,12 @@
         <?php endforeach; ?>
         </select>
         <?php endif; ?>
+        <label for="round">Round</label>
+        <select name="round">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </select>
         <br />
         <button type="submit" class="btn">Submit</button>
     </form>

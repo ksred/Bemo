@@ -19,7 +19,7 @@
                                     
                                 </div>
                                 <div class="campaign-artist-vote">
-                                    <div class="vote-artist" data-artistid="<?= $a->id ?>" data-campaignid="<?= $campaign->campaign_id ?>">
+                                    <div class="vote-artist" data-artistid="<?= $a->id ?>" data-campaignid="<?= $campaign->campaign_id ?>" data-round="<?= $campaign->round ?>">
                                         Vote!
                                     </div>
                                 </div>

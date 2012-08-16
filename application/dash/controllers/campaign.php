@@ -100,13 +100,13 @@ class Campaign extends CI_Controller
         $this->load->view("/campaign/artists_per", $data);
     }
     
-    function list_artists_per ($id) {
+    function list_artists_per ($id, $round) {
         $this->load->Model("Model_campaign");
         $data['title'] = "Bemo Admin - Campaigns";
         $data['user'] = $this->session->userdata('name');
         $data['var'] = "list";
         $data['campaign'] = $this->Model_campaign->get_campaign_from_id($id);
-        $data['all_artists'] = $this->Model_campaign->list_artists_campaign($id);
+        $data['all_artists'] = $this->Model_campaign->list_artists_campaign($id, $round);
         $data['section'] = "campaign";
         
         $this->load->view("/campaign/list_artists_per", $data);
@@ -176,9 +176,11 @@ class Campaign extends CI_Controller
     function campaign_add_artist () {
         $campaign = $_POST['campaign'];
         $artist = $_POST['artist'];
+        $round = $_POST['round'];
         $data = array(
             "campaign_id" => $campaign,
-            "artist_id" => $artist
+            "artist_id" => $artist,
+            "round" => $round
         );
         $result = $this->Model_campaign->add_artist_campaign($data);
         

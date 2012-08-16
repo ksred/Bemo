@@ -27,6 +27,21 @@ class Web extends CI_Controller {
 		$data['title'] = "Bemo!fm";
 		$this->load->view('construction');
 	}
+	
+	function vote() {
+		$artist_id = $_POST['artist_id'];
+		$campaign_id = $_POST['campaign_id'];
+		$round = $_POST['round_id'];
+		$ip = $_SERVER['REMOTE_ADDR'];
+		
+		$this->load->Model("Model_vote");
+		$result = $this->Model_vote->submit_vote($artist_id, $campaign_id, $round, $ip);
+		if ($result) {
+			echo "TRUE";
+		} else {
+			echo "FALSE";
+		}
+	}
 }
 
 /* End of file web.php */

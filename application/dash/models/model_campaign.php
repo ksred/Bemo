@@ -131,10 +131,11 @@ class Model_campaign extends CI_Model
         return $result->result();
     }
     
-    function list_artists_campaign ($id) {
+    function list_artists_campaign ($id, $round) {
         $this->db->select('*');
         $this->db->from("campaign_artists, artist");
         $this->db->where("campaign_artists.campaign_id", $id);
+        $this->db->where("campaign_artists.round", $round);
         $this->db->where("campaign_artists.artist_id = artist.id");
         $result = $this->db->get();
         //die($this->db->last_query());
