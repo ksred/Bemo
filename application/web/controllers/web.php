@@ -17,7 +17,7 @@ class Web extends CI_Controller {
 		
 		$this->load->Model("Model_campaign");
 		$latest = $this->Model_campaign->get_latest_active_campaign();
-		$latest_artists = $this->Model_campaign->get_top_artists_campaign($latest->campaign_id, 8);
+		$latest_artists = $this->Model_campaign->get_top_artists_campaign($latest->campaign_id, 10);
 		$data['campaign'] = $latest;
 		$data['campaign_artist'] = $latest_artists;
 		$this->load->view("/web/index", $data);
