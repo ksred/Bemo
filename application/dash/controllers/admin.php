@@ -56,7 +56,6 @@ class Admin extends CI_Controller
         $this->load->Model("Model_vote");
         $this->load->Model("Model_campaign");
         $id = $this->Model_campaign->get_max_campaign_no();
-        $round = $this->Model_vote->get_round_campaign($id);
         //die(var_dump($round));
         
         $data['title'] = "Bemo - Admin";

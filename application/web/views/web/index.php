@@ -1,8 +1,8 @@
 <?php $this->load->view("_template/header.php"); ?>
 
 <?php if (isset($campaign)) : ?>
-            <div class="span10 home">
-                <div class="campaign-lead-home span10" style="background-image:url('<?= $campaign->picture ?>')">
+            <div class="span12 home">
+                <div class="campaign-lead-home span11" style="background-image:url('<?= $campaign->picture ?>')">
                     <div class="campaign-lead-text">
                         <div class="campaign-lead-title"><?= $campaign->title ?></div>
                         <div class="campaign-lead-desc"><?= $campaign->desc?></div>
