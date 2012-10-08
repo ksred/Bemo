@@ -63,7 +63,7 @@
     	$(document).ready( function() {
     		var height = $(window).height();
     		$('#mascot').css({top : height - 800});
-    		$('#mc_embed_signup').css({top : height - 500});
+    		$('#mc_embed_signup').css({top : height - 410});
     		
     		$('#mascotwrap').hover( function() {
 				$('#mascot').animate({top : height - 400}, 500);
